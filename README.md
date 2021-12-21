@@ -1,2 +1,2 @@
-# 1-Hafta
-1. Hafta Çalışmalarını Buraya Ekle
+# Icon Projesi
+Çalışmalarını Buraya Ekle

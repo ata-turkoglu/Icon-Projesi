@@ -7,4 +7,4 @@
 4. Issue'na tıkla sağ menu'de pull requestini linkle
 5. isteğe bağlı yorum yaz ve issue u close et 
 
-### [GDrive Link](https://drive.google.com/drive/folders/1flV_QoGZMDmqmaHWl1cksN-zcIxGCmHM)
+### [Google Drive Link](https://drive.google.com/drive/folders/1flV_QoGZMDmqmaHWl1cksN-zcIxGCmHM)

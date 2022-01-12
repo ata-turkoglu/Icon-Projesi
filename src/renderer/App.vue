@@ -12,4 +12,8 @@
 
 <style>
   /* CSS */
+  #app{
+	height: 600px;
+	width: 800px;
+  }
 </style>

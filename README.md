@@ -18,17 +18,22 @@
 
 
 
-
-
 ## Documentation
 
-To check out [wiki]([Documentation](https://github.com/acik-kaynak/icon-wizard/wiki)) and docs, visit [IconWizard]([Documentation](https://github.com/acik-kaynak/icon-wizard/wiki)).
+To check out [wiki](https://github.com/acik-kaynak/icon-wizard/wiki) and docs, visit [IconWizard](https://github.com/acik-kaynak/icon-wizard/wiki).
+
+## Issues
 
 
+## Contribution
+Please make sure to read the [Contributing Guide](https://github.com/acik-kaynak/icon-wizard/blob/main/CONTRIBUTING.md) before making a pull request.
 
-## Contributing
 
-Contributions are always welcome!
+<div style ="margin-top:2rem; margin-bottom:2rem;">
+<a href="https://github.com/acik-kaynak/icon-wizard/graphs/contributors">
+  <img width="250" heigth="250" src="https://contrib.rocks/image?repo=acik-kaynak/icon-wizard" />
+</a>
+</div>
 
 
 ## License

@@ -8,6 +8,9 @@
           Welcome to your new project!!
         </span>
         <system-information></system-information>
+        <router-link tag="button" to="/iconslanding">Icons Landing</router-link>
+        <router-link tag="button" to="/drawArea">Draw Area</router-link>
+        <router-link tag="button" to="/icondetail">Icon Detail</router-link>
       </div>
 
       <div class="right-side">

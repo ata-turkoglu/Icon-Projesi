@@ -1,6 +1,6 @@
 name: Weekly tasks
 description: To put weekly tasks in project board
-title: "[Geliştir]: "
+title: "[Geliştir/Araştır/Tasarim]: Task Kısa Tanım"
 labels: ["Code", "Design", "Research"]
 
 body:

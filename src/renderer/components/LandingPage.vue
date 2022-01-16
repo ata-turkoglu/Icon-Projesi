@@ -8,9 +8,9 @@
           Welcome to your new project!!
         </span>
         <system-information></system-information>
-        <router-link tag="button" to="/iconslanding">Icons Landing</router-link>
-        <router-link tag="button" to="/drawArea">Draw Area</router-link>
-        <router-link tag="button" to="/icondetail">Icon Detail</router-link>
+        <router-link class="router-button" tag="p" exact-active-class="router-button-active" to="/iconslanding">Icons Landing</router-link>
+        <router-link class="router-button" tag="p" exact-active-class="router-button-active" to="/drawArea">Draw Area</router-link>
+        <router-link class="router-button" tag="p" exact-active-class="router-button-active" to="/icondetail">Icon Detail</router-link>
       </div>
 
       <div class="right-side">
@@ -82,6 +82,47 @@
   }
 
   main > div { flex-basis: 50%; }
+
+  .router-button{
+    margin: 0;
+    margin-top: 1rem;
+    margin-inline: 2.5vw;
+    padding: 0;
+    position: relative;
+    height: fit-content;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 2.5vh;
+    cursor: pointer;
+    color: #42b983;
+    text-decoration: none;
+  }
+  .router-button::after{
+    content: "";
+    position: absolute;
+    width: 120%;
+    border-radius: 0.1vmax;
+    transform: scaleX(0);
+    height: 0.2vmax;
+    bottom: 0%;
+    left: -10%;
+    background-color: #42b983;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+  }
+  .router-button:hover:after {
+    height: 0.2vmax;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .router-button-active::after{
+    content: "";
+    height: 0.2vmax;
+    position: absolute;
+    width: 120%;
+    border-radius: 0.1vmax;
+    transform: none;
+  }
 
   .left-side {
     display: flex;

@@ -8,8 +8,8 @@ body:
     id: type
     attributes:
       label: Türü
-      description: Task türünü giriniz
-      placeholder: ex. Kodlama, Geliştirme, Araştırma, Tasarım
+      description: "Task türünü giriniz"
+      placeholder: "ex. Kodlama, Geliştirme, Araştırma, Tasarım"
       multiple: true
       options:
         - Kodlama
@@ -22,23 +22,23 @@ body:
     id: tanım
     attributes:
       label: Tanım
-      description: Task hakkında detaylı bilgi giriniz
-      placeholder: X feature designı yapılacak
+      description: "Task hakkında detaylı bilgi giriniz"
+      placeholder: "X feature designı yapılacak"
     validations:
       required: true
   - type: input
     id: Ortam
     attributes:
       label: Ortam
-      description: Hangi ortam ve diller kullanılacak
-      placeholder: JavaScript, Figma.. etc.
+      description: "Hangi ortam ve diller kullanılacak"
+      placeholder: "JavaScript, Figma.. etc."
     validations:
       required: true
   - type: input
     id: Output
     attributes:
       label: Beklenen Çıktı
-      description: Task tamamlandığında beklenen sonuç/ürün
-      placeholder: Code Commitleri, Rapor etc.
+      description: "Task tamamlandığında beklenen sonuç/ürün"
+      placeholder: "Code Commitleri, Rapor etc."
     validations:
       required: true

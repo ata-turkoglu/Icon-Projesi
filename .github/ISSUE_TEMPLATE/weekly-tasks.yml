@@ -9,17 +9,16 @@ body:
     attributes:
       label: Türü
       description: "Task türünü giriniz"
-      placeholder: "ex. Kodlama, Geliştirme, Araştırma, Tasarım"
       multiple: true
       options:
         - Kodlama
         - Geliştirme
         - Araştırma
         - Tasarım
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
-    id: tanım
+    id: tanim
     attributes:
       label: Tanım
       description: "Task hakkında detaylı bilgi giriniz"

@@ -1,13 +1,6 @@
----
 name: Weekly tasks
 about: To put weekly tasks in project board
-title: ''
-labels: ''
-assignees: ''
-
----
-
-title: "Geliştir: "
+title: "[Geliştir]: "
 labels: ["Code", "Design", "Research"]
 
 body:
@@ -23,8 +16,8 @@ body:
         - Geliştirme
         - Araştırma
         - Tasarım
-    validations:
-      required: true
+      validations:
+        required: true
   - type: textarea
     id: tanım
     attributes:

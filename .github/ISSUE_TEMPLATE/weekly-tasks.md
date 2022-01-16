@@ -1,0 +1,51 @@
+---
+name: Weekly tasks
+about: To put weekly tasks in project board
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+title: "Geliştir: "
+labels: ["Code", "Design", "Research"]
+
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Türü
+      description: Task türünü giriniz
+      placeholder: ex. Kodlama, Geliştirme, Araştırma, Tasarım
+      multiple: true
+      options:
+        - Kodlama
+        - Geliştirme
+        - Araştırma
+        - Tasarım
+    validations:
+      required: true
+  - type: textarea
+    id: tanım
+    attributes:
+      label: Tanım
+      description: Task hakkında detaylı bilgi giriniz
+      placeholder: X feature designı yapılacak
+    validations:
+      required: true
+  - type: input
+    id: Ortam
+    attributes:
+      label: Ortam
+      description: Hangi ortam ve diller kullanılacak
+      placeholder: JavaScript, Figma.. etc.
+    validations:
+      required: true
+  - type: input
+    id: Output
+    attributes:
+      label: Beklenen Çıktı
+      description: Task tamamlandığında beklenen sonuç/ürün
+      placeholder: Code Commitleri, Rapor etc.
+    validations:
+      required: true

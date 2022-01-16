@@ -1,5 +1,5 @@
 name: Weekly tasks
-about: To put weekly tasks in project board
+description: To put weekly tasks in project board
 title: "[Geliştir]: "
 labels: ["Code", "Design", "Research"]
 

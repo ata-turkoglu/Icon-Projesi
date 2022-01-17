@@ -47,18 +47,22 @@
 </template>
 
 <script>
-/* eslint-disable no-alert, no-console */
 import pngToIco from 'png-to-ico';
 import fs from 'fs';
 export default {
   methods: {
     async pngToIcon(e) {
       let file = e.target.files[0];
-      pngToIco(file)
-        .then((buf) => {
-          fs.writeFileSync('app.ico', buf);
-        })
-        .catch(console.error);
+      try {
+        pngToIco(file.path).then(buf => {
+          let fileName = file.name.slice(0,file.name.lastIndexOf('.'))
+            fs.writeFileSync(fileName+'.ico', buf);
+          }).catch(e=>{
+            console.log(e)
+          })
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
 };

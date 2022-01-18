@@ -1,70 +1,49 @@
 <template>
   <div class="iconsLanding">
-    <div class="leftBar">
-      <span class="menu-icons mdi mdi-tune-variant mdi-36px"></span>
-      <div class="menu">
-        <span class="menu-icons mdi mdi-fire mdi-36px"></span>
-        <span class="menu-icons mdi mdi-view-grid-outline mdi-36px"></span>
-        <span class="menu-icons mdi mdi-square-edit-outline mdi-36px"></span>
-        <span class="menu-icons mdi mdi-plus-box-outline mdi-36px"></span>
-        <input
-          type="file"
-          accept="image/png"
-          style="display: none"
-          ref="imageInput"
-          @change="pngToIcon"
-        />
-        <span
-          class="menu-icons mdi mdi-file-swap-outline mdi-36px"
-          @click="$refs.imageInput.click()"
-        ></span>
-      </div>
-      <span class="menu-icons mdi mdi-account mdi-36px"></span>
-    </div>
     <div class="container">
-      <span class="icons mdi mdi-home mdi-48px"></span>
-      <span class="icons mdi mdi-account-supervisor mdi-48px"></span>
-      <span class="icons mdi mdi-artstation mdi-48px"></span>
-      <span class="icons mdi mdi-axe-battle mdi-48px"></span>
-      <span class="icons mdi mdi-bell mdi-48px"></span>
-      <span class="icons mdi mdi-bomb mdi-48px"></span>
-      <span class="icons mdi mdi-bookmark-minus mdi-48px"></span>
-      <span class="icons mdi mdi-cached mdi-48px"></span>
-      <span class="icons mdi mdi-butterfly-outline mdi-48px"></span>
-      <span class="icons mdi mdi-camera-iris mdi-48px"></span>
-      <span class="icons mdi mdi-cast-audio mdi-48px"></span>
-      <span class="icons mdi mdi-crown-circle mdi-48px"></span>
-      <span class="icons mdi mdi-dice-5-outline mdi-48px"></span>
-      <span class="icons mdi mdi-discord mdi-48px"></span>
-      <span class="icons mdi mdi-diving-helmet mdi-48px"></span>
-      <span class="icons mdi mdi-emoticon-devil-outline mdi-48px"></span>
-      <span class="icons mdi mdi-volleyball mdi-48px"></span>
-      <span class="icons mdi mdi-white-balance-sunny mdi-48px"></span>
-      <span class="icons mdi mdi-snowflake mdi-48px"></span>
-      <span class="icons mdi mdi-car mdi-48px"></span>
+			<span
+				v-for="el in iconList" :key="el.code"
+				class="icons mdi mdi-48px"
+				:class="el.code"
+				@click="goDetails(el)"
+			/>
     </div>
   </div>
 </template>
 
 <script>
-import pngToIco from 'png-to-ico';
-import fs from 'fs';
 export default {
-  methods: {
-    async pngToIcon(e) {
-      let file = e.target.files[0];
-      try {
-        pngToIco(file.path).then(buf => {
-          let fileName = file.name.slice(0,file.name.lastIndexOf('.'))
-            fs.writeFileSync(fileName+'.ico', buf);
-          }).catch(e=>{
-            console.log(e)
-          })
-      } catch (error) {
-        console.log(error)
-      }
-    }
-  }
+	data () {
+		return {
+			iconList: [
+				{name: "", code: "mdi-home"},
+				{name: "", code: "mdi-account-supervisor"},
+				{name: "", code: "mdi-artstation"},
+				{name: "", code: "mdi-axe-battle"},
+				{name: "", code: "mdi-bell"},
+				{name: "", code: "mdi-bomb"},
+				{name: "", code: "mdi-bookmark-minus"},
+				{name: "", code: "mdi-cached"},
+				{name: "", code: "mdi-butterfly-outline"},
+				{name: "", code: "mdi-camera-iris"},
+				{name: "", code: "mdi-cast-audio"},
+				{name: "", code: "mdi-crown-circle"},
+				{name: "", code: "mdi-dice-5-outline"},
+				{name: "", code: "mdi-discord"},
+				{name: "", code: "mdi-diving-helmet"},
+				{name: "", code: "mdi-emoticon-devil-outline"},
+				{name: "", code: "mdi-volleyball"},
+				{name: "", code: "mdi-white-balance-sunny"},
+				{name: "", code: "mdi-snowflake"},
+				{name: "", code: "mdi-car"},
+			]
+		}
+	},
+	methods:{
+		goDetails(icon){
+			this.$router.push('/icon-detail/'+ icon.code).catch(()=>{});
+		}
+	}
 };
 </script>
 

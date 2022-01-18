@@ -1,19 +1,51 @@
 <template>
   <div class="leftBar">
-    <span class="menu-icons mdi mdi-tune-variant mdi-36px"></span>
-    <div class="menu">
-      <span class="menu-icons mdi mdi-fire mdi-36px"></span>
-      <span class="menu-icons mdi mdi-view-grid-outline mdi-36px"></span>
-      <span class="menu-icons mdi mdi-square-edit-outline mdi-36px"></span>
-      <span class="menu-icons mdi mdi-plus-box-outline mdi-36px"></span>
-    </div>
-    <span class="menu-icons mdi mdi-account mdi-36px"></span>
+		<router-link  tag="div" to="/">
+			<span class="menu-icons mdi mdi-home mdi-36px" />
+		</router-link>
+		<span class="menu-icons mdi mdi-tune-variant mdi-36px" />
+		<div class="menu">
+			<span class="menu-icons mdi mdi-fire mdi-36px"></span>
+			<span class="menu-icons mdi mdi-view-grid-outline mdi-36px"></span>
+			<span class="menu-icons mdi mdi-square-edit-outline mdi-36px"></span>
+			<span class="menu-icons mdi mdi-plus-box-outline mdi-36px"></span>
+			<input
+				type="file"
+				accept="image/png"
+				style="display: none"
+				ref="imageInput"
+				@change="pngToIcon"
+			/>
+			<span
+				class="menu-icons mdi mdi-file-swap-outline mdi-36px"
+				@click="$refs.imageInput.click()"
+			/>
+		</div>
+		<span class="menu-icons mdi mdi-account mdi-36px"></span>
   </div>
 </template>
 
 <script>
+import pngToIco from 'png-to-ico'
+import fs from 'fs'
+
 export default {
-  name: 'LeftMenu'
+  name: 'LeftMenu',
+  methods: {
+    async pngToIcon (e) {
+      let file = e.target.files[0]
+      try {
+        pngToIco(file.path).then(buf => {
+          let fileName = file.name.slice(0, file.name.lastIndexOf('.'))
+          fs.writeFileSync(fileName + '.ico', buf)
+        }).catch(e => {
+          console.log(e)
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
 }
 </script>
 

@@ -1,20 +1,29 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+		<left-menu />
+    <router-view class="router-container" />
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'iconize'
-  }
+import LeftMenu from './components/general/LeftMenu'
+export default {
+  name: 'iconize',
+  components: {LeftMenu}
+}
 </script>
 
 <style>
   /* CSS */
   #app{
-  min-height: 600px;
-  height: 100%;
-  width: 100%;
+		display:flex;
+		flex-direction:row;
+		min-height: 600px;
+		height: 100%;
+		width: 100%;
   }
+	.router-container{
+		height: 100%;
+		width: 100%;
+	}
 </style>
